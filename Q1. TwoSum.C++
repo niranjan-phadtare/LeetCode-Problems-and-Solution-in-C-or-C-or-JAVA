@@ -12,3 +12,25 @@ vector<int> twoSum(vector<int>& nums, int target) {
     }
 }
 // Time Complexity - O(n^2)
+
+---------------------------------------------------
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> mp;
+
+    for (int i = 0; i < nums.size(); i++) {
+        int rem = target - nums[i];
+        if (mp.find(rem) != mp.end()) {
+            return {mp[rem], i};
+        }
+        mp[nums[i]] = i;
+    }
+    return {};
+}
+
+// Time Complexity O(n)
