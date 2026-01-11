@@ -9,12 +9,11 @@ public:
             ListNode* first = prev->next;
             ListNode* second = first->next;
 
-            // Swapping
             first->next = second->next;
             second->next = first;
             prev->next = second;
 
-            prev = first;  // move forward
+            prev = first;  
         }
 
         return dummy.next;
